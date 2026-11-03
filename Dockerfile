@@ -6,15 +6,20 @@ FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 
 ARG CONDA_ENV_PATH
 
-# Use conda to install tools and dependencies into the configured environment path
 ARG PYOPENMS_VERSION=3.6.0
+ARG PYTHON_VERSION=3.13
 
 RUN mamba create -qy -p ${CONDA_ENV_PATH} \
-    -c bioconda \
     -c conda-forge \
-    pyopenms==${PYOPENMS_VERSION} \
+    python=${PYTHON_VERSION} \
+    pip \
     matplotlib \
     seaborn && \
+    ${CONDA_ENV_PATH}/bin/python -m pip install --no-cache-dir \
+        --only-binary=pyopenms \
+        "pyopenms==${PYOPENMS_VERSION}" && \
+    ${CONDA_ENV_PATH}/bin/python -c \
+        'import pyopenms as oms; assert hasattr(oms, "BrukerTimsFile"), "BrukerTimsFile is missing"; oms.BrukerTimsFile()' && \
     mamba clean -afy
 
 # Deploy the target tools into a base image
@@ -25,8 +30,10 @@ ARG CONDA_ENV_PATH
 COPY --from=builder ${CONDA_ENV_PATH} ${CONDA_ENV_PATH}
 
 ENV CONDA_ENV_PATH="${CONDA_ENV_PATH}" \
-    OPENMS_DATA_PATH="${CONDA_ENV_PATH}/share/OpenMS" \
     PATH="${CONDA_ENV_PATH}/bin:${PATH}"
+
+RUN python3 -c \
+    'import pyopenms as oms; assert hasattr(oms, "BrukerTimsFile"), "BrukerTimsFile is missing"; oms.BrukerTimsFile()'
 
 # Add a new user/group called bldocker
 RUN groupadd -g 500001 bldocker && \

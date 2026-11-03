@@ -3,9 +3,12 @@
 Docker image for [pyOpenMS](https://pyopenms.readthedocs.io/), the Python
 bindings for the OpenMS mass-spectrometry analysis library.
 
-This image is maintained by the Boutros Lab and installs pyOpenMS with
-Matplotlib and Seaborn in a dedicated Miniforge/Conda environment on an Ubuntu
-runtime image.
+This image is maintained by the Boutros Lab and installs the official pyOpenMS
+wheel with Matplotlib and Seaborn in a dedicated Miniforge/Conda environment
+on an Ubuntu runtime image. The build verifies that `BrukerTimsFile` is
+available and can be instantiated in the final runtime image. Loading a real
+Bruker `.d` acquisition must be validated by the consuming QC pipeline's
+integration tests, where the test data is maintained.
 
 ## Version
 
@@ -29,7 +32,7 @@ Please see the list of [Contributors](https://github.com/TheBoutrosLab/docker-py
 
 1. Röst HL, Schmitt U, Aebersold R, Malmström L. pyOpenMS: a Python-based interface to the OpenMS mass-spectrometry algorithm library. *Proteomics*. 2014;14(1):74-77. doi: [10.1002/pmic.201300246](https://doi.org/10.1002/pmic.201300246)
 2. pyOpenMS documentation: <https://pyopenms.readthedocs.io/>
-3. Bioconda package index: <https://bioconda.github.io/recipes/pyopenms/README.html>
+3. pyOpenMS package index: <https://pypi.org/project/pyopenms/>
 
 ## License
 

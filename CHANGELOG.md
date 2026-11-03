@@ -8,11 +8,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ## [Unreleased]
 
-## [3.6..0] - 2026-11-03
+## [3.6.0] - 2026-11-03
 
 ### Changed
 
 - Update pyOpenMS from 3.5.0 to 3.6.0.
+- Install the official binary pyOpenMS wheel and verify that `BrukerTimsFile`
+  can be instantiated in both the builder and final runtime stages.
 
 ## [3.5.0] - 2026-10-08
 

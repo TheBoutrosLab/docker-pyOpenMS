@@ -11,7 +11,7 @@ runtime image.
 
 | Component | Version |
 |-----------|---------|
-| pyOpenMS | 3.5.0 |
+| pyOpenMS | 3.6.0 |
 | Miniforge | 26.1.1-2 |
 | Ubuntu | 24.04 |
 

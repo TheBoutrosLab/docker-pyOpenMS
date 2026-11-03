@@ -7,7 +7,7 @@ FROM condaforge/miniforge3:${MINIFORGE_VERSION} AS builder
 ARG CONDA_ENV_PATH
 
 # Use conda to install tools and dependencies into the configured environment path
-ARG PYOPENMS_VERSION=3.5.0
+ARG PYOPENMS_VERSION=3.6.0
 
 RUN mamba create -qy -p ${CONDA_ENV_PATH} \
     -c bioconda \

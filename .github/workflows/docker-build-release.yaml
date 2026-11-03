@@ -32,7 +32,7 @@ jobs:
     steps:
       - uses: TheBoutrosLab/tool-Docker-action@v2
         with:
-          # Bioconda does not provide pyOpenMS 3.5.0 for linux/arm64.
+          # Bioconda does not provide pyOpenMS 3.6.0 for linux/arm64.
           platforms: linux/amd64
       # Uncomment if you expect to use non-SemVer release tags
       #     non-semver-tags: true

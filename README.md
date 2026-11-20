@@ -38,21 +38,9 @@ Please see the list of [Contributors](https://github.com/TheBoutrosLab/docker-py
 
 Author: Chenghao Zhu
 
-docker-pyOpenMS is licensed under the GNU General Public License version 2. See
-the file [LICENSE](LICENSE) for the terms of the GNU GPL license.
+The code and container recipes in docker-pyOpenMS are licensed under the
+BSD 3-Clause License (`BSD-3-Clause`). See [LICENSE](LICENSE) for the terms.
 
-docker-pyOpenMS provides a containerized Python environment for OpenMS-based
-mass-spectrometry analysis. Bundled software retains its respective upstream
-license.
+Bundled software retains its respective upstream license.
 
-Copyright (C) 2026 Sanford Burnham Prebys Medical Discovery Institute
-("Boutros Lab") All rights reserved.
-
-This program is free software; you can redistribute it and/or modify it under
-the terms of the GNU General Public License as published by the Free Software
-Foundation; either version 2 of the License, or (at your option) any later
-version.
-
-This program is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+Copyright (C) 2026 Sanford Burnham Prebys Medical Discovery Institute ("Boutros Lab")
